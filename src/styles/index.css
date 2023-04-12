@@ -1,0 +1,38 @@
+@import url('./reset.css');
+@import url('./grid.css');
+
+:root {
+  font-family: 'Righteous', cursive;
+  font-family: 'Schibsted Grotesk', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: #000;
+  background-color: #ffff;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+}
+
+.title {
+  font-size: 2rem;
+  line-height: 1.18;
+  font-weight: 700;
+}

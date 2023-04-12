@@ -1,0 +1,42 @@
+.container {
+  width: 100%;
+  padding: 30px 20px;
+  margin-right: auto;
+  margin-left: auto;
+  display: grid;
+  gap: 1.25rem;
+}
+
+/* Mobile */
+@media (min-width: 580px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+/* Large Screen Mobile */
+@media (min-width: 780px) {
+  .container {
+    max-width: 740px;
+  }
+}
+
+/* Tablet */
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+@media (min-width: 1460px) {
+  .container {
+    max-width: 1400px;
+  }
+}
