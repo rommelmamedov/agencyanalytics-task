@@ -1,0 +1,15 @@
+.tabContainer {
+  display: flex;
+  border-bottom: 2px solid #f3f2f5;
+  width: 100%;
+  gap: 2rem;
+}
+
+.tab {
+  padding: 1rem 0;
+  color: #667085;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1.25rem;
+}
