@@ -21,9 +21,9 @@ export const TabButton = ({ id, children }: HTMLAttributes<HTMLButtonElement>) =
       id={tabId}
       role="tab"
       onClick={handleTabButtonClick}
-      className={classNames(styles.tabButton, activeTab === id ? styles.active : '')}
+      className={classNames(styles.tabButton, activeTab === tabId ? styles.active : '')}
       aria-selected={`${activeTab === tabId ? 'true' : 'false'}`}
-      aria-controls={`$tabpanel-${id}`}
+      aria-controls={`tabpanel-${id}`}
     >
       {children}
     </button>

@@ -2,7 +2,6 @@
   display: flex;
   gap: 10px;
   flex-direction: column;
-  width: 220px;
   height: 160px;
   cursor: pointer;
 }

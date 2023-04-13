@@ -8,7 +8,7 @@ interface ImageCardProps extends Image {
 
 export const ImageCard = ({ url, tabIndex, filename, sizeInBytes }: ImageCardProps) => (
   <figure className={styles.imageCard} tabIndex={tabIndex + 1}>
-    <img src={url} alt={filename} />
+    <img src={url} alt={filename} loading="lazy" />
     <figcaption>
       <h2>{filename}</h2>
       <span>{convertBytesToMB(sizeInBytes)} MB</span>

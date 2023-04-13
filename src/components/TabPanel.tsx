@@ -1,19 +1,27 @@
 import { ImageCard } from '@/components/ImageCard';
-import { useSelector } from '@/redux/store';
 import { selectApp } from '@/redux/reducer';
-import { HTMLAttributes, useMemo } from 'react';
+import { useSelector } from '@/redux/store';
 import styles from '@/styles/modules/Tab.module.css';
+import { Image } from '@/types';
 
-export const TabPanel = ({ id }: HTMLAttributes<HTMLDivElement>) => {
-  const { activeTab, images } = useSelector(selectApp);
-  const filteredImages = useMemo(
-    () => (activeTab === 'tab-favorite' ? images.filter(image => image.favorited) : images),
-    [activeTab, images],
-  );
+interface TabPanelProps {
+  id: string;
+  images: Image[];
+}
+
+export const TabPanel = ({ id, images }: TabPanelProps) => {
+  const { activeTab } = useSelector(selectApp);
+  const tabId = `tab-${id}`;
 
   return (
-    <div id={`tabpanel-${id}`} className={styles.tabpanel} role="tabpanel" aria-labelledby={`tab-${id}`}>
-      {filteredImages.map((image, index) => (
+    <div
+      id={`tabpanel-${id}`}
+      className={styles.tabpanel}
+      role="tabpanel"
+      aria-labelledby={tabId}
+      aria-current={`${activeTab === tabId ? 'true' : 'false'}`}
+    >
+      {images.map((image, index) => (
         <ImageCard key={image.id} tabIndex={index} {...image} />
       ))}
     </div>
