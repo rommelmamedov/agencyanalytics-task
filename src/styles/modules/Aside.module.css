@@ -29,7 +29,7 @@
 }
 
 .imageHeader em {
-  color: #667085;
+  color: var(--gray);
   font-size: 0.75rem;
 }
 

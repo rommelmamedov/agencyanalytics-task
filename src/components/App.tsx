@@ -4,6 +4,7 @@ import { Tab } from '@/components/Tab';
 import { Aside } from '@/components/Aside';
 import { useDispatch } from '@/redux/store';
 import { loadImages } from '@/redux/reducer';
+import styles from '@/styles/modules/App.module.css';
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -13,12 +14,9 @@ export const App = () => {
   }, []);
 
   return (
-    <div
-      style={{ display: 'flex', paddingInlineStart: '2em' }}
-      // className="container"
-    >
-      <main>
-        <h1 className="title">Photos</h1>
+    <div className="container">
+      <main className={styles.main}>
+        <h1 className={styles.title}>Photos</h1>
         <Tab />
       </main>
       <Aside />

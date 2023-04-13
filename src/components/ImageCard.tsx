@@ -2,12 +2,16 @@ import { Image } from '@/types';
 import { convertBytesToMB } from '@/utils';
 import styles from '@/styles/modules/ImageCard.module.css';
 
-export const ImageCard = ({ url, filename, sizeInBytes }: Image) => {
-  return (
-    <div className={styles.imageCard}>
-      <img src={url} alt={filename} />
-      <strong>{filename}</strong>
-      <em>{convertBytesToMB(sizeInBytes)} MB</em>
-    </div>
-  );
-};
+interface ImageCardProps extends Image {
+  tabIndex: number;
+}
+
+export const ImageCard = ({ url, tabIndex, filename, sizeInBytes }: ImageCardProps) => (
+  <figure className={styles.imageCard} tabIndex={tabIndex + 1}>
+    <img src={url} alt={filename} />
+    <figcaption>
+      <h2>{filename}</h2>
+      <span>{convertBytesToMB(sizeInBytes)} MB</span>
+    </figcaption>
+  </figure>
+);

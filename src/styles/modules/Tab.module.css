@@ -1,20 +1,45 @@
 .tabContainer {
+  position: relative;
   display: flex;
-  border-bottom: 2px solid #f3f2f5;
-  width: 100%;
   gap: 2rem;
+  width: 100%;
+  border-bottom: 2px solid #f3f2f5;
 }
 
 .tabButton {
   padding: 1rem 0;
-  color: #667085;
   background-color: transparent;
   border: none;
-  cursor: pointer;
+  color: var(--gray);
   font-size: 1.25rem;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.tabButton:hover {
+  color: var(--purple);
+  font-weight: 500;
 }
 
 .active {
-  color: #6441c6;
-  border-bottom: 2px solid #6441c6;
+  color: var(--purple);
+}
+
+.line {
+  position: absolute;
+  top: 52px;
+  left: 0;
+  width: 150px;
+  height: 4px;
+  background-color: var(--purple);
+  border-radius: 4px;
+  transition: all 0.3s ease-in-out;
+}
+
+.tabpanel {
+  display: grid;
+  row-gap: 4.5rem;
+  column-gap: 1rem;
+  grid-template-rows: repeat(4, 160px);
+  grid-template-columns: repeat(4, 1fr);
 }
