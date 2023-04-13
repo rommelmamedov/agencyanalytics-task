@@ -1,6 +1,6 @@
-import { Image } from '../types';
-import { convertBytesToMB } from '../utils';
-import styles from '../styles/modules/ImageCard.module.css';
+import { Image } from '@/types';
+import { convertBytesToMB } from '@/utils';
+import styles from '@/styles/modules/ImageCard.module.css';
 
 export const ImageCard = ({ url, filename, sizeInBytes }: Image) => {
   return (

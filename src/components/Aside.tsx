@@ -1,11 +1,21 @@
 import { useSelector } from 'react-redux';
 
-import { convertBytesToMB } from '../utils';
-import { selectActiveImage } from '../redux/reducer';
-import styles from '../styles/modules/Aside.module.css';
+import { LikeIcon } from '@/svg/LikeIcon';
+import { convertBytesToMB } from '@/utils';
+import { useDispatch } from '@/redux/store';
+import { selectActiveImage, setImageAsFavorited } from '@/redux/reducer';
+import styles from '@/styles/modules/Aside.module.css';
 
 export const Aside = () => {
+  const dispatch = useDispatch();
+  const activeImage = useSelector(selectActiveImage);
+
+  if (!activeImage) {
+    return null;
+  }
+
   const {
+    id,
     createdAt,
     description,
     dimensions,
@@ -16,7 +26,11 @@ export const Aside = () => {
     updatedAt,
     uploadedBy,
     url,
-  } = useSelector(selectActiveImage) ?? {};
+  } = activeImage;
+
+  const handleFavoriteButtonClick = () => {
+    dispatch(setImageAsFavorited(id));
+  };
 
   return (
     <aside className={styles.aside}>
@@ -24,54 +38,39 @@ export const Aside = () => {
       <header>
         <div className={styles.imageHeader}>
           <strong>{filename}</strong>
-          {sizeInBytes && <em>{convertBytesToMB(sizeInBytes)} MB</em>}
+          <em>{convertBytesToMB(sizeInBytes)} MB</em>
         </div>
-        <button className={styles.likeButton}>
-          <svg
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="#a7a7a7"
-            strokeWidth="2.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            style={{
-              fill: favorited ? '#d0311a' : '',
-              stroke: favorited ? '#d0311a' : '#a7a7a7',
-            }}
-          >
-            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
-          </svg>
+        <button className={styles.likeButton} onClick={handleFavoriteButtonClick}>
+          <LikeIcon favorited={favorited} />
         </button>
       </header>
-      <div className="imageInfo">
-        <strong>Information</strong>
-        <div>
+      <strong>Information</strong>
+      <ul className={styles.imageInformation}>
+        <li>
           <p>Uploaded by</p>
           <strong>{uploadedBy}</strong>
-        </div>
-        <div>
+        </li>
+        <li>
           <p>Created</p>
           <strong>{createdAt}</strong>
-        </div>
-        <div>
+        </li>
+        <li>
           <p>Last modified</p>
           <strong>{updatedAt}</strong>
-        </div>
-        <div>
+        </li>
+        <li>
           <p>Dimensions</p>
           <strong>
-            {dimensions?.width}x{dimensions?.height}
+            {dimensions.width}x{dimensions.height}
           </strong>
-        </div>
-        <div>
+        </li>
+        <li>
           <p>Resolution</p>
           <strong>
-            {resolution?.width}x{resolution?.width}
+            {resolution.width}x{resolution.width}
           </strong>
-        </div>
-      </div>
+        </li>
+      </ul>
       <div className={styles.imageDescription}>
         <h1>Description</h1>
         <p>{description}</p>

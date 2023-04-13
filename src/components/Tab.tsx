@@ -1,12 +1,11 @@
 import { MouseEvent, useCallback } from 'react';
 
-import { ImageCard } from './ImageCard';
-import { useDispatch, useSelector } from '../redux/store';
-import { selectApp, setActiveTab } from '../redux/reducer';
-import { classNames } from '../utils';
-import { ActiveTab } from '../types';
-
-import styles from '../styles/modules/Tab.module.css';
+import { ImageCard } from '@/components/ImageCard';
+import { ActiveTab } from '@/types';
+import { classNames } from '@/utils';
+import { useDispatch, useSelector } from '@/redux/store';
+import { selectApp, setActiveTab } from '@/redux/reducer';
+import styles from '@/styles/modules/Tab.module.css';
 
 export const Tab = () => {
   const dispatch = useDispatch();
