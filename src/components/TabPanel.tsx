@@ -1,4 +1,4 @@
-import { ImageCard } from '@/components/ImageCard';
+import { Figure } from '@/components/Figure';
 import { selectApp } from '@/redux/reducer';
 import { useSelector } from '@/redux/store';
 import styles from '@/styles/modules/Tab.module.css';
@@ -22,7 +22,7 @@ export const TabPanel = ({ id, images }: TabPanelProps) => {
       aria-current={`${activeTab === tabId ? 'true' : 'false'}`}
     >
       {images.map((image, index) => (
-        <ImageCard key={image.id} tabIndex={index} {...image} />
+        <Figure key={image.id} tabIndex={index} {...image} />
       ))}
     </div>
   );

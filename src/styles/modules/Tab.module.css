@@ -23,10 +23,6 @@
   color: var(--purple);
 }
 
-.active {
-  color: var(--purple);
-}
-
 .active::after {
   content: '';
   position: absolute;
@@ -40,11 +36,11 @@
 
 .tabpanel {
   display: grid;
-  row-gap: 4.5rem;
-  column-gap: 2.5rem;
+  gap: 2.5rem;
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
+/* TODO: */
 .tabpanel[aria-current='false'] {
   display: none;
 }
