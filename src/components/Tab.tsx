@@ -17,7 +17,7 @@ export const Tab = () => {
   }, []);
 
   return (
-    <div className="tabs">
+    <section className="tabs">
       <div
         role="tablist"
         aria-label="Sample Tabs" // TODO:
@@ -67,6 +67,6 @@ export const Tab = () => {
           </div>
         </>
       )}
-    </div>
+    </section>
   );
 };

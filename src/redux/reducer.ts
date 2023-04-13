@@ -4,6 +4,7 @@ import { RootState } from './store';
 import { ActiveTab, AppReducerState } from '../types';
 
 const selectApp = (state: RootState) => state.app;
+const selectActiveImage = (state: RootState) => state.app.activeImage;
 const setActiveTab = createAction<ActiveTab>('app/setActiveTab');
 // NOTE: Using createAsyncThunk to handle async actions with side effects.
 const loadImages = createAsyncThunk('image/load', async () => {
@@ -23,6 +24,7 @@ const loadImages = createAsyncThunk('image/load', async () => {
 
 const initialState: AppReducerState = {
   activeTab: 'tab-recent',
+  activeImage: null,
   images: [],
   isLoading: false,
 };
@@ -44,4 +46,4 @@ const appReducer = createReducer(initialState, builder => {
     });
 });
 
-export { appReducer, setActiveTab, loadImages, selectApp };
+export { appReducer, setActiveTab, loadImages, selectApp, selectActiveImage };

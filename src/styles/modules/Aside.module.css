@@ -1,0 +1,51 @@
+.aside {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  width: 30%;
+  padding: 1.5rem;
+  background-color: rgba(211, 17, 17, 0.625);
+}
+
+.aside img {
+  width: 100%;
+  max-height: 250px;
+  border-radius: 0.75rem;
+  object-fit: cover;
+}
+
+.aside header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.imageHeader {
+  display: grid;
+  gap: 4px;
+}
+
+.imageHeader strong {
+  font-weight: 600;
+}
+
+.imageHeader em {
+  color: #667085;
+  font-size: 0.75rem;
+}
+
+.imageInfo {
+}
+
+.imageDescription {
+}
+
+.likeButton {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.likeButton:hover {
+  fill: #d0311a;
+  stroke: #d0311a;
+}
