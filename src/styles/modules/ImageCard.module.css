@@ -1,0 +1,19 @@
+.imageCard {
+  width: 300px;
+  height: 250px;
+  display: grid;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.imageCard img {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.imageCard em {
+  color: #667085;
+  font-size: 0.75rem;
+}

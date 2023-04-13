@@ -1,4 +1,12 @@
-export interface Image {
+type ActiveTab = 'tab-recent' | 'tab-favorite';
+
+interface AppReducerState {
+  activeTab: ActiveTab;
+  images: Image[];
+  isLoading: boolean;
+}
+
+interface Image {
   id: string;
   url: string;
   filename: string;
@@ -22,3 +30,5 @@ export interface Image {
   }[];
   favorited: boolean;
 }
+
+export type { ActiveTab, Image, AppReducerState };
