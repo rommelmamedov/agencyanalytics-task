@@ -1,6 +1,6 @@
 .imageCard {
   display: flex;
-  gap: 10px;
+  gap: .75rem;
   flex-direction: column;
   cursor: pointer;
 }
@@ -17,14 +17,11 @@
 .imageCard img {
   width: 100%;
   height: 100%;
-  border-radius: 12px;
+  border-radius: 1.5rem;
   object-fit: cover;
   aspect-ratio: 220/160;
 }
-/* can we do this? */
-.imageCard img {
-  height: 160px;
-}
+
 .imageCard h2 {
   font-size: 1rem;
   font-weight: 500;

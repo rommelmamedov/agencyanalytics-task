@@ -2,30 +2,34 @@
   display: flex;
   width: 100%;
   margin-left: auto;
-  /* padding: 15px; */
   margin-right: auto;
 }
 
+  @media (max-width: 780px) {
+.container{flex-direction:column-reverse;
+}
+} 
+
 /* Mobile */
-@media (min-width: 580px) {
+  @media (min-width: 580px) {
   .container {
     max-width: 540px;
   }
-}
+} 
 
 /* Large Screen Mobile */
-@media (min-width: 780px) {
+ @media (min-width: 780px) {
   .container {
     max-width: 740px;
   }
-}
+} 
 
 /* Tablet */
-@media (min-width: 992px) {
+ @media (min-width: 992px) {
   .container {
     max-width: 960px;
   }
-}
+} 
 
 /* Desktop */
 @media (min-width: 1200px) {

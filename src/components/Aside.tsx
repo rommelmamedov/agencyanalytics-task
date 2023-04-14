@@ -2,13 +2,14 @@ import { useCallback } from 'react';
 import { useSelector } from 'react-redux';
 
 import { LikeIcon } from '@/svg/LikeIcon';
-import { convertBytesToMB } from '@/utils';
+import { convertBytesToMB, classNames } from '@/utils';
 import { useDispatch } from '@/redux/store';
 import { selectActiveImage, setDeleteImage, setImageAsFavorited } from '@/redux/reducer';
 import styles from '@/styles/modules/Aside.module.css';
 import { formatDate } from '@/utils';
 
-export const Aside = () => {
+// what to do with ts here?
+export const Aside = ({ isOpen }) => {
   const dispatch = useDispatch();
   const activeImage = useSelector(selectActiveImage);
 
@@ -38,7 +39,7 @@ export const Aside = () => {
   } = activeImage;
 
   return (
-    <aside className={styles.aside}>
+    <aside className={classNames(styles.aside, isOpen ? styles.visible : '')}>
       <img src={url} alt={filename} />
       <header>
         <div className={styles.imageHeader}>

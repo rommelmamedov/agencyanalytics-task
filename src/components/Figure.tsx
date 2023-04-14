@@ -15,6 +15,9 @@ export const Figure = ({ id, url, tabIndex, filename, sizeInBytes, ...otherProps
 
   const handleClick = useCallback(() => {
     dispatch(setAsideProps({ isAsideOpen: true, activeImage: { id, url, filename, sizeInBytes, ...otherProps } }));
+    // what do you think?
+
+    window.scrollTo(0, 0);
   }, []);
 
   const handleKeyDown = useCallback(

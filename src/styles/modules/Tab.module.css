@@ -12,7 +12,7 @@
   background-color: transparent;
   border: none;
   color: var(--gray);
-  font-size: 18px;
+  font-size: 1.25rem;
   font-weight: 600;
   transition: all 0.3s ease-in-out;
   cursor: pointer;
@@ -44,3 +44,11 @@
 .tabpanel[aria-current='false'] {
   display: none;
 }
+
+/* Mobile */
+  @media (max-width: 780px) {
+  .tabpanel {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+} 
+

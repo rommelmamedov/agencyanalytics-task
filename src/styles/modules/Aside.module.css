@@ -2,14 +2,26 @@
   display: flex;
   gap: 1rem;
   flex-direction: column;
-  width: 30%;
-  padding: 30px;
+  width: 0%;
+  padding: 2rem;
   background-color: #fff;
+  
 }
+
+.visible{
+width: 30%;
+
+}
+/* Mobile */
+  @media (max-width: 780px) {
+  .aside {
+width: 100%;  }
+} 
+
 
 .aside img {
   width: 100%;
-  height: 200px;
+  height: 16rem;
   border-radius: 0.75rem;
   object-fit: cover;
 }
@@ -21,7 +33,7 @@
 
 .imageHeader {
   display: flex;
-  gap: 4px;
+  gap: .25rem;
   flex-direction: column;
 }
 

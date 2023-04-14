@@ -1,6 +1,17 @@
 .main {
+  width: 100%;
+  padding:0 2.5rem;
+  transition: all 0.5s ease-out;
+
+}
+
+.shrink{
   width: 70%;
-  padding-right: 2.5em;
+  transition: all 0.5s ease-out;
+}
+  @media (max-width: 780px) {
+  .shrink {
+width: 100%;  }
 }
 
 .title {
@@ -9,3 +20,5 @@
   font-weight: 700;
   line-height: 1.18;
 }
+
+  

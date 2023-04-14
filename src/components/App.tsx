@@ -5,6 +5,7 @@ import { Aside } from '@/components/Aside';
 import { loadImages, selectIsAsideOpen } from '@/redux/reducer';
 import { useDispatch, useSelector } from '@/redux/store';
 import styles from '@/styles/modules/App.module.css';
+import { classNames } from '@/utils';
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -16,11 +17,11 @@ export const App = () => {
 
   return (
     <div className="container">
-      <main className={styles.main}>
+      <main className={classNames(styles.main, isAsideOpen ? styles.shrink : styles.main)}>
         <h1 className={styles.title}>Photos</h1>
         <Tab />
       </main>
-      {isAsideOpen && <Aside />}
+      <Aside isOpen={isAsideOpen} />
     </div>
   );
 };
