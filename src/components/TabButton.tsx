@@ -3,12 +3,12 @@ import { HTMLAttributes, MouseEvent, useCallback } from 'react';
 import { ActiveTab } from '@/types';
 import { classNames } from '@/utils';
 import { useDispatch, useSelector } from '@/redux/store';
-import { selectApp, setActiveTab } from '@/redux/reducer';
+import { selectActiveTab, setActiveTab } from '@/redux/reducer';
 import styles from '@/styles/modules/Tab.module.css';
 
 export const TabButton = ({ id, children }: HTMLAttributes<HTMLButtonElement>) => {
   const dispatch = useDispatch();
-  const { activeTab } = useSelector(selectApp);
+  const activeTab = useSelector(selectActiveTab);
 
   const tabId = `tab-${id}`;
 

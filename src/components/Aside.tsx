@@ -4,18 +4,22 @@ import { useSelector } from 'react-redux';
 import { LikeIcon } from '@/svg/LikeIcon';
 import { convertBytesToMB } from '@/utils';
 import { useDispatch } from '@/redux/store';
-import { selectAsideProps, setImageAsFavorited } from '@/redux/reducer';
+import { selectActiveImage, setDeleteImage, setImageAsFavorited } from '@/redux/reducer';
 import styles from '@/styles/modules/Aside.module.css';
 import { formatDate } from '@/utils';
 
 export const Aside = () => {
   const dispatch = useDispatch();
-  const asideProps = useSelector(selectAsideProps);
+  const activeImage = useSelector(selectActiveImage);
+
+  const handleDeleteButtonClick = useCallback(() => {
+    dispatch(setDeleteImage(id));
+  }, []);
   const handleFavoriteButtonClick = useCallback(() => {
     dispatch(setImageAsFavorited(id));
   }, []);
 
-  if (!asideProps.activeImage) {
+  if (!activeImage) {
     return null;
   }
 
@@ -31,7 +35,7 @@ export const Aside = () => {
     updatedAt,
     uploadedBy,
     url,
-  } = asideProps.activeImage;
+  } = activeImage;
 
   return (
     <aside className={styles.aside}>
@@ -76,7 +80,9 @@ export const Aside = () => {
         <h1>Description</h1>
         <p>{description}</p>
       </div>
-      <button className={styles.deleteButton}>Delete</button>
+      <button className={styles.deleteButton} onClick={handleDeleteButtonClick}>
+        Delete
+      </button>
     </aside>
   );
 };

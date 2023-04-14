@@ -1,10 +1,11 @@
 type ActiveTab = 'tab-recent' | 'tab-favorite';
+type AsideProps = {
+  activeImage: null | Image;
+  isAsideOpen: boolean;
+};
 
 interface AppReducerState {
-  asideProps: {
-    activeImage: null | Image;
-    isAsideOpen: boolean;
-  };
+  asideProps: AsideProps;
   activeTab: ActiveTab;
   images: Image[];
   isLoading: boolean;
@@ -35,4 +36,4 @@ interface Image {
   favorited: boolean;
 }
 
-export type { ActiveTab, Image, AppReducerState };
+export type { ActiveTab, AsideProps, Image, AppReducerState };

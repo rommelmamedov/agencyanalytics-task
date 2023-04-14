@@ -21,9 +21,9 @@
   object-fit: cover;
   aspect-ratio: 220/160;
 }
- /* can we do this? */
-.imageCard img{
-   height: 160px;
+/* can we do this? */
+.imageCard img {
+  height: 160px;
 }
 .imageCard h2 {
   font-size: 1rem;

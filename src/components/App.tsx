@@ -2,12 +2,13 @@ import { useEffect } from 'react';
 
 import { Tab } from '@/components/Tab';
 import { Aside } from '@/components/Aside';
-import { useDispatch } from '@/redux/store';
-import { loadImages } from '@/redux/reducer';
+import { loadImages, selectIsAsideOpen } from '@/redux/reducer';
+import { useDispatch, useSelector } from '@/redux/store';
 import styles from '@/styles/modules/App.module.css';
 
 export const App = () => {
   const dispatch = useDispatch();
+  const isAsideOpen = useSelector(selectIsAsideOpen);
 
   useEffect(() => {
     dispatch(loadImages());
@@ -19,7 +20,7 @@ export const App = () => {
         <h1 className={styles.title}>Photos</h1>
         <Tab />
       </main>
-      <Aside />
+      {isAsideOpen && <Aside />}
     </div>
   );
 };

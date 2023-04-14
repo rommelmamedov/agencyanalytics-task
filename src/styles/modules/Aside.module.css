@@ -21,40 +21,41 @@
 
 .imageHeader {
   display: flex;
-  flex-direction: column;
   gap: 4px;
+  flex-direction: column;
 }
 
 .aside strong {
   font-weight: 500;
-
 }
 
-.aside em, .aside p {
+.aside em,
+.aside p {
   color: var(--gray);
 }
 
-
 .imageInformation {
   padding: 0;
+  border-bottom: 1px solid #e4e4e5;
+  border-top: 1px solid #e4e4e5;
   list-style: none;
-  border-top: 1px solid #e4e4e5 ;
-  border-bottom: 1px solid #e4e4e5 ;
-}
-.imageInformation li{
-  padding: 1rem 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 
-.imageInformation li:not(:last-child){
-border-bottom: 1px solid #e4e4e5;}
+.imageInformation li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+}
+
+.imageInformation li:not(:last-child) {
+  border-bottom: 1px solid #e4e4e5;
+}
 
 .imageDescription h1 {
-  font-weight: 500;
+  margin-bottom: 0.5rem;
   font-size: 1rem;
-  margin-bottom: .5rem;
+  font-weight: 500;
 }
 
 .likeButton {
@@ -68,16 +69,17 @@ border-bottom: 1px solid #e4e4e5;}
   stroke: #d0311a;
 }
 
-.deleteButton{
-   background-color: transparent;
+.deleteButton {
+  padding: 0.5rem;
+  background-color: transparent;
   border: 2px solid #e4e4e5;
   border-radius: 4px;
-  padding: .5rem ;
   color: var(--black);
-cursor: pointer;
-transition: all .3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
 }
-.deleteButton:hover{
+
+.deleteButton:hover {
+  border: 2px solid var(--gray);
   font-weight: 500;
-  border:2px solid var(--gray);
 }

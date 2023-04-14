@@ -1,5 +1,5 @@
 import { Figure } from '@/components/Figure';
-import { selectApp } from '@/redux/reducer';
+import { selectActiveTab } from '@/redux/reducer';
 import { useSelector } from '@/redux/store';
 import styles from '@/styles/modules/Tab.module.css';
 import { Image } from '@/types';
@@ -10,7 +10,7 @@ interface TabPanelProps {
 }
 
 export const TabPanel = ({ id, images }: TabPanelProps) => {
-  const { activeTab } = useSelector(selectApp);
+  const activeTab = useSelector(selectActiveTab);
   const tabId = `tab-${id}`;
 
   return (
