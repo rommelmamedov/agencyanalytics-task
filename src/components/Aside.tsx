@@ -1,16 +1,20 @@
+import { useCallback } from 'react';
 import { useSelector } from 'react-redux';
 
 import { LikeIcon } from '@/svg/LikeIcon';
 import { convertBytesToMB } from '@/utils';
 import { useDispatch } from '@/redux/store';
-import { selectActiveImage, setImageAsFavorited } from '@/redux/reducer';
+import { selectAsideProps, setImageAsFavorited } from '@/redux/reducer';
 import styles from '@/styles/modules/Aside.module.css';
 
 export const Aside = () => {
   const dispatch = useDispatch();
-  const activeImage = useSelector(selectActiveImage);
+  const asideProps = useSelector(selectAsideProps);
+  const handleFavoriteButtonClick = useCallback(() => {
+    dispatch(setImageAsFavorited(id));
+  }, []);
 
-  if (!activeImage) {
+  if (!asideProps.activeImage) {
     return null;
   }
 
@@ -26,11 +30,7 @@ export const Aside = () => {
     updatedAt,
     uploadedBy,
     url,
-  } = activeImage;
-
-  const handleFavoriteButtonClick = () => {
-    dispatch(setImageAsFavorited(id));
-  };
+  } = asideProps.activeImage;
 
   return (
     <aside className={styles.aside}>

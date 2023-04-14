@@ -4,7 +4,7 @@ import { RootState } from '@/redux/store';
 import { ActiveTab, AppReducerState, Image } from '@/types';
 
 const selectApp = (state: RootState) => state.app;
-const selectActiveImage = (state: RootState) => state.app.activeImage;
+const selectAsideProps = (state: RootState) => state.app.asideProps;
 const setActiveTab = createAction<ActiveTab>('app/setActiveTab');
 const setImageAsFavorited = createAction<string>('app/setImageAsFavorited');
 // NOTE: Using createAsyncThunk to handle async actions with side effects.
@@ -18,8 +18,11 @@ const loadImages = createAsyncThunk('image/load', async () => {
 });
 
 const initialState: AppReducerState = {
+  asideProps: {
+    activeImage: null,
+    isAsideOpen: false,
+  },
   activeTab: 'tab-recent',
-  activeImage: null,
   images: [],
   isLoading: false,
 };
@@ -39,7 +42,7 @@ const appReducer = createReducer(initialState, builder => {
     })
     .addCase(loadImages.fulfilled, (state, { payload }) => {
       state.images = payload;
-      state.activeImage = payload[0];
+      state.asideProps.activeImage = payload[0]; // TODO:
       state.isLoading = false;
     })
     .addCase(loadImages.rejected, state => {
@@ -47,4 +50,4 @@ const appReducer = createReducer(initialState, builder => {
     });
 });
 
-export { appReducer, setActiveTab, loadImages, selectApp, selectActiveImage, setImageAsFavorited };
+export { appReducer, setActiveTab, loadImages, selectApp, selectAsideProps, setImageAsFavorited };

@@ -1,8 +1,11 @@
 type ActiveTab = 'tab-recent' | 'tab-favorite';
 
 interface AppReducerState {
+  asideProps: {
+    activeImage: null | Image;
+    isAsideOpen: boolean;
+  };
   activeTab: ActiveTab;
-  activeImage: null | Image;
   images: Image[];
   isLoading: boolean;
 }
