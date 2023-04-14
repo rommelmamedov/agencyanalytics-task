@@ -5,6 +5,7 @@ import { convertBytesToMB } from '@/utils';
 import { useDispatch } from '@/redux/store';
 import { selectActiveImage, setImageAsFavorited } from '@/redux/reducer';
 import styles from '@/styles/modules/Aside.module.css';
+import { formatDate } from '@/utils';
 
 export const Aside = () => {
   const dispatch = useDispatch();
@@ -52,11 +53,11 @@ export const Aside = () => {
         </li>
         <li>
           <p>Created</p>
-          <strong>{createdAt}</strong>
+          <strong>{formatDate(createdAt)}</strong>
         </li>
         <li>
           <p>Last modified</p>
-          <strong>{updatedAt}</strong>
+          <strong>{formatDate(updatedAt)}</strong>
         </li>
         <li>
           <p>Dimensions</p>
@@ -75,7 +76,7 @@ export const Aside = () => {
         <h1>Description</h1>
         <p>{description}</p>
       </div>
-      <button>Delete</button>
+      <button className={styles.deleteButton}>Delete</button>
     </aside>
   );
 };
