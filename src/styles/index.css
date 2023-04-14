@@ -5,7 +5,9 @@
   --black: #000;
   --purple: #6441c6;
   --gray: #667085;
-  background-color: var(--white);
+
+      background-color: #f8fafc;
+
   color: var(--black);
   font-family: 'Righteous', cursive;
   font-family: 'Schibsted Grotesk', sans-serif;
@@ -34,8 +36,8 @@ body {
   /* Allow percentage-based heights in the application */
   height: 100%;
   padding: 0;
-  background-color: #f8fafc;
-  font-size: 16px;
+  font-size: 12px;
+
 }
 
 /* Improve media defaults */
@@ -61,3 +63,4 @@ h5,
 h6 {
   overflow-wrap: break-word;
 }
+
