@@ -26,7 +26,7 @@ export const Figure = ({ id, url, tabIndex, filename, sizeInBytes, ...otherProps
   );
 
   return (
-    <figure className={styles.imageCard} tabIndex={tabIndex + 1} onClick={handleClick} onKeyDown={handleKeyDown}>
+    <figure className={styles.figure} tabIndex={tabIndex + 1} onClick={handleClick} onKeyDown={handleKeyDown}>
       <img src={url} alt={filename} loading="lazy" />
       <figcaption>
         <h2>{filename}</h2>
