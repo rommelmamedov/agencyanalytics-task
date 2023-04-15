@@ -5,19 +5,30 @@
   width: 0%;
   padding: 2rem;
   background-color: #fff;
-  
+  position: relative;
 }
 
-.visible{
-width: 30%;
+.visible {
+  width: 30%;
+}
 
+.closeButton {
+  display: none;
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  right: 0.25rem;
+  top: 0.25rem;
 }
 /* Mobile */
-  @media (max-width: 780px) {
+@media (max-width: 780px) {
   .aside {
-width: 100%;  }
-} 
-
+    width: 100%;
+  }
+  .closeButton {
+    display: inline-block;
+  }
+}
 
 .aside img {
   width: 100%;
@@ -33,7 +44,7 @@ width: 100%;  }
 
 .imageHeader {
   display: flex;
-  gap: .25rem;
+  gap: 0.25rem;
   flex-direction: column;
 }
 
