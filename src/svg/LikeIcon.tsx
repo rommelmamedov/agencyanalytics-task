@@ -4,8 +4,8 @@ interface LikeIconProps {
 
 export const LikeIcon = ({ favorited }: LikeIconProps) => {
   const style = {
-    fill: favorited ? '#d0311a' : '',
-    stroke: favorited ? '#d0311a' : '#a7a7a7',
+    fill: favorited ? 'var(--red)' : '',
+    stroke: favorited ? 'var(--red)' : 'var(--gray-2)',
   };
 
   return (
@@ -14,7 +14,7 @@ export const LikeIcon = ({ favorited }: LikeIconProps) => {
       height="24"
       viewBox="0 0 24 24"
       fill="none"
-      stroke="#a7a7a7"
+      stroke="var(--gray-2)"
       strokeWidth="2.5"
       strokeLinecap="round"
       strokeLinejoin="round"

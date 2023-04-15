@@ -1,11 +1,14 @@
 .aside {
+  position: sticky;
+  top: 0;
   display: flex;
   gap: 1rem;
   flex-direction: column;
   width: 0%;
-  padding: 2rem;
-  background-color: #fff;
-  position: relative;
+  height: 100vh;
+  padding: 2.5rem;
+  background-color: var(--white);
+  border-left: 2px solid var(--gray-4);
 }
 
 .visible {
@@ -13,12 +16,12 @@
 }
 
 .closeButton {
+  position: absolute;
+  top: 0.25rem;
+  right: 0.25rem;
   display: none;
   background-color: transparent;
   border: none;
-  position: absolute;
-  right: 0.25rem;
-  top: 0.25rem;
 }
 
 @media (max-width: 780px) {
@@ -59,8 +62,8 @@
 
 .imageInformation {
   padding: 0;
-  border-bottom: 1px solid #e4e4e5;
-  border-top: 1px solid #e4e4e5;
+  border-bottom: 1px solid var(--gray-3);
+  border-top: 1px solid var(--gray-3);
   list-style: none;
 }
 
@@ -72,7 +75,7 @@
 }
 
 .imageInformation li:not(:last-child) {
-  border-bottom: 1px solid #e4e4e5;
+  border-bottom: 1px solid var(--gray-3);
 }
 
 .imageDescription h1 {
@@ -88,14 +91,14 @@
 }
 
 .likeButton:hover {
-  fill: #d0311a;
-  stroke: #d0311a;
+  fill: var(--red);
+  stroke: var(--red);
 }
 
 .deleteButton {
   padding: 0.5rem;
   background-color: transparent;
-  border: 2px solid #e4e4e5;
+  border: 2px solid var(--gray-3);
   border-radius: 4px;
   color: var(--black);
   transition: all 0.3s ease-in-out;
