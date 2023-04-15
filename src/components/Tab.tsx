@@ -1,10 +1,10 @@
 import { useMemo } from 'react';
 
-import { TabPanel } from '@/components/TabPanel';
-import { TabButton } from '@/components/TabButton';
-import { useSelector } from '@/redux/store';
-import { selectApp } from '@/redux/reducer';
-import styles from '@/styles/modules/Tab.module.css';
+import { TabPanel } from 'components/TabPanel';
+import { TabButton } from 'components/TabButton';
+import { useSelector } from 'redux/store';
+import { selectApp } from 'redux/reducer';
+import styles from 'styles/modules/Tab.module.css';
 
 export const Tab = () => {
   const { isLoading, images } = useSelector(selectApp);

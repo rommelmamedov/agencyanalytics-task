@@ -1,11 +1,11 @@
 import { useEffect } from 'react';
 
-import { Tab } from '@/components/Tab';
-import { Aside } from '@/components/Aside';
-import { classNames } from '@/utils';
-import { useDispatch, useSelector } from '@/redux/store';
-import { loadImages, selectIsAsideOpen } from '@/redux/reducer';
-import styles from '@/styles/modules/App.module.css';
+import { Tab } from 'components/Tab';
+import { Aside } from 'components/Aside';
+import { classNames } from 'utils';
+import { useDispatch, useSelector } from 'redux/store';
+import { loadImages, selectIsAsideOpen } from 'redux/reducer';
+import styles from 'styles/modules/App.module.css';
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -13,7 +13,7 @@ export const App = () => {
 
   useEffect(() => {
     dispatch(loadImages());
-  }, []);
+  }, [dispatch]);
 
   return (
     <div className="container">

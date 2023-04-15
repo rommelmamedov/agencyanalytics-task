@@ -1,7 +1,7 @@
 import { createAction, createReducer, createAsyncThunk } from '@reduxjs/toolkit';
 
-import { RootState } from '@/redux/store';
-import { ActiveTab, AppReducerState, AsideProps, Image } from '@/types';
+import { RootState } from 'redux/store';
+import { ActiveTab, AppReducerState, AsideProps, Image } from 'types';
 
 //* Selectors
 const selectApp = (state: RootState) => state.app;

@@ -1,8 +1,8 @@
-import { Figure } from '@/components/Figure';
-import { selectActiveTab } from '@/redux/reducer';
-import { useSelector } from '@/redux/store';
-import styles from '@/styles/modules/Tab.module.css';
-import { Image } from '@/types';
+import { Figure } from 'components/Figure';
+import { selectActiveTab } from 'redux/reducer';
+import { useSelector } from 'redux/store';
+import styles from 'styles/modules/Tab.module.css';
+import { Image } from 'types';
 
 interface TabPanelProps {
   id: string;

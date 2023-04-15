@@ -1,10 +1,10 @@
-import { KeyboardEvent, useCallback } from 'react';
+import { KeyboardEvent } from 'react';
 
-import { Image } from '@/types';
-import { convertBytesToMB } from '@/utils';
-import { useDispatch } from '@/redux/store';
-import { setAsideProps } from '@/redux/reducer';
-import styles from '@/styles/modules/Figure.module.css';
+import { Image } from 'types';
+import { convertBytesToMB } from 'utils';
+import { useDispatch } from 'redux/store';
+import { setAsideProps } from 'redux/reducer';
+import styles from 'styles/modules/Figure.module.css';
 
 interface FigureProps extends Image {
   tabIndex: number;
@@ -16,14 +16,11 @@ export const Figure = ({ id, url, tabIndex, filename, sizeInBytes, ...otherProps
   const handleClick = () =>
     dispatch(setAsideProps({ isAsideOpen: true, activeImage: { id, url, filename, sizeInBytes, ...otherProps } }));
 
-  const handleKeyDown = useCallback(
-    (event: KeyboardEvent<HTMLElement>) => {
-      if (event.key === 'Enter') {
-        handleClick();
-      }
-    },
-    [handleClick],
-  );
+  const handleKeyDown = (event: KeyboardEvent<HTMLElement>) => {
+    if (event.key === 'Enter') {
+      handleClick();
+    }
+  };
 
   return (
     <figure className={styles.figure} tabIndex={tabIndex + 1} onClick={handleClick} onKeyDown={handleKeyDown}>

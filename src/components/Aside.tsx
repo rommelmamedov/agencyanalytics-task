@@ -1,13 +1,12 @@
 import { useRef } from 'react';
 import { useSelector } from 'react-redux';
 
-import { LikeIcon } from '@/svg/LikeIcon';
-import { formatDate, convertBytesToMB, classNames } from '@/utils';
-import { useDispatch } from '@/redux/store';
-import { selectActiveImage, setAsideProps, setDeleteImage, setImageAsFavorited } from '@/redux/reducer';
-import { CloseIcon } from '@/svg/CloseIcon';
-import styles from '@/styles/modules/Aside.module.css';
-import { useOnClickOutside } from '@/hooks/useOnClickOutside';
+import { LikeIcon } from 'svg/LikeIcon';
+import { formatDate, convertBytesToMB, classNames } from 'utils';
+import { useDispatch } from 'redux/store';
+import { selectActiveImage, setAsideProps, setDeleteImage, setImageAsFavorited } from 'redux/reducer';
+import { CloseIcon } from 'svg/CloseIcon';
+import styles from 'styles/modules/Aside.module.css';
 
 interface AsideProps {
   isOpen: boolean;
@@ -19,7 +18,6 @@ export const Aside = ({ isOpen }: AsideProps) => {
   const activeImage = useSelector(selectActiveImage);
 
   const handleCloseButtonClick = () => dispatch(setAsideProps({ isAsideOpen: false, activeImage: null }));
-  // useOnClickOutside(asideRef, handleCloseButtonClick);
 
   if (!activeImage) {
     return null;
