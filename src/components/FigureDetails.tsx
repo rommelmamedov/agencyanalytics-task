@@ -4,12 +4,13 @@ import { LikeIcon } from 'svg/LikeIcon';
 import { formatDate, convertBytesToMB } from 'utils';
 import { useDispatch } from 'redux/store';
 import { selectActiveImage, setAsideProps, setDeleteImage, setImageAsFavorited } from 'redux/reducer';
-import styles from '@/styles/modules/FigureDetails.module.css';
+import styles from 'styles/modules/FigureDetails.module.css';
 
 export const FigureDetails = () => {
   const dispatch = useDispatch();
   const activeImage = useSelector(selectActiveImage);
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const handleCloseButtonClick = () => dispatch(setAsideProps({ isAsideOpen: false, activeImage: null }));
 
   if (!activeImage) {
