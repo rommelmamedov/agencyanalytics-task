@@ -13,12 +13,8 @@ interface FigureProps extends Image {
 export const Figure = ({ id, url, tabIndex, filename, sizeInBytes, ...otherProps }: FigureProps) => {
   const dispatch = useDispatch();
 
-  const handleClick = useCallback(() => {
+  const handleClick = () =>
     dispatch(setAsideProps({ isAsideOpen: true, activeImage: { id, url, filename, sizeInBytes, ...otherProps } }));
-    // what do you think?
-
-    window.scrollTo(0, 0);
-  }, []);
 
   const handleKeyDown = useCallback(
     (event: KeyboardEvent<HTMLElement>) => {

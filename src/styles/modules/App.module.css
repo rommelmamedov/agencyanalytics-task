@@ -1,17 +1,12 @@
 .main {
   width: 100%;
-  padding:0 2.5rem;
-  transition: all 0.5s ease-out;
-
+  padding: 0 2.5rem;
+  transition: all 0.3s ease;
 }
 
-.shrink{
+.shrink {
   width: 70%;
-  transition: all 0.5s ease-out;
-}
-  @media (max-width: 780px) {
-  .shrink {
-width: 100%;  }
+  transition: all 0.3s ease;
 }
 
 .title {
@@ -21,4 +16,8 @@ width: 100%;  }
   line-height: 1.18;
 }
 
-  
+@media (max-width: 780px) {
+  .shrink {
+    width: 100%;
+  }
+}

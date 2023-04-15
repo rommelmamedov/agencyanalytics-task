@@ -2,10 +2,10 @@ import { useEffect } from 'react';
 
 import { Tab } from '@/components/Tab';
 import { Aside } from '@/components/Aside';
-import { loadImages, selectIsAsideOpen } from '@/redux/reducer';
-import { useDispatch, useSelector } from '@/redux/store';
-import styles from '@/styles/modules/App.module.css';
 import { classNames } from '@/utils';
+import { useDispatch, useSelector } from '@/redux/store';
+import { loadImages, selectIsAsideOpen } from '@/redux/reducer';
+import styles from '@/styles/modules/App.module.css';
 
 export const App = () => {
   const dispatch = useDispatch();

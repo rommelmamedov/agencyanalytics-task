@@ -20,7 +20,7 @@
   right: 0.25rem;
   top: 0.25rem;
 }
-/* Mobile */
+
 @media (max-width: 780px) {
   .aside {
     width: 100%;
